@@ -59,7 +59,9 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
   geom_point(mapping = aes(color= class)) + 
   geom_smooth(data = filter(mpg, class %in%class ), se = FALSE, mapping=aes(color=class)) #not sure why I need class %in%class
 
-ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy))
   geom_boxplot(mapping = aes(color = class)) + 
   geom_smooth()
 
+ggplot(data = mpg) + 
+  geom_smooth(mapping = aes(x = displ, y = hwy)) 
