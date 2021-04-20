@@ -1,0 +1,85 @@
+---
+title: "Graduate Statistics"
+---
+Syllabus Grad Stat Tentative (Max)
+
+This is tentative. We will see how much we will accomplish. You should expect to do a minimum of 5 hours per lecture of study outside of our class._
+
+
+- [Lecture 1](00-install_name_plot.html)
+        - [Get set up with R, RStudio, RStudio cloud](00-install_name_plot.html)
+        - [Download book and discuss sections 1.1 and 1.2 at least](00-install_name_plot.html)
+
+    - Homework
+        - Up to 1.28
+        - Swirl lessons 1~4
+        - **using R** [Statistical Software Labs (openintro.org)](https://www.openintro.org/book/statlabs/?statlab=software_intro) 
+        - **Khan** : [Statistical questions (video) | Study design | Khan Academy](https://www.khanacademy.org/math/statistics-probability/designing-studies/statistics-overview/v/understanding-statistical-questions)
+        - **Khan** : [Reasonable samples (video) | Study design | Khan Academy](https://www.khanacademy.org/math/statistics-probability/designing-studies/sampling-and-surveys/v/reasonable-samples)
+
+
+- [Lecture 2](00-install_name_plot.html)
+        - **Book sections 1.3 and 1.4**
+        - Introduction to Git and Github
+        - **Quiz**
+
+    - Homework
+        - Swirl 5~8
+        - **Exercises up to end of Chapter 1 in book**
+        - **using R** [Statistical Software Labs (openintro.org)](https://www.openintro.org/book/statlabs/?statlab=software_intro) **using R**
+        - **Khan** : [Picking fairly (video) | Sampling methods | Khan Academy](https://www.khanacademy.org/math/statistics-probability/designing-studies/sampling-methods-stats/v/probability-decisions)
+        - **Khan** : [Types of statistical studies (video) | Khan Academy](https://www.khanacademy.org/math/statistics-probability/designing-studies/types-studies-experimental-observational/v/types-of-statistical-studies)
+
+- [Lecture 3](00-install_name_plot.html)
+        - **Book sections 2.1**
+        - **Quiz**
+    - Homework
+        - **using R** [Statistical Software Labs (openintro.org)](https://www.openintro.org/book/statlabs/?statlab=intro_to_data)
+        - **Exercises 1~20**
+        - **Khan** : [Representing data (video) | Khan Academy](https://www.khanacademy.org/math/statistics-probability/displaying-describing-data/quantitative-data-graphs/v/ways-to-represent-data)
+        - **Khan** : [Summarizing quantitative data | Statistics and probability | Khan Academy](https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data)
+
+- [Lecture 4]
+
+    1. **Book Sections 2.2 and 2.3**
+
+    1. R labs tidyverse
+
+    1. **Quiz**
+
+    - Homework
+
+    1. **using R** [Statistical Software Labs (openintro.org)](https://www.openintro.org/book/statlabs/?statlab=intro_to_data) **using R**
+    2. Exercises in Book up to end of chapter
+    3. **Khan** : [Identifying individuals, variables and categorical variables in a data set (video) | Khan Academy](https://www.khanacademy.org/math/statistics-probability/analyzing-categorical-data/one-categorical-variable/v/identifying-individuals-variables-and-categorical-variables-in-a-data-set)
+    4. **Khan** : [Two-way frequency tables and Venn diagrams (video) | Khan Academy](https://www.khanacademy.org/math/statistics-probability/analyzing-categorical-data/two-way-tables-for-categorical-data/v/two-way-frequency-tables-and-venn-diagrams)
+    5. [**(13) R****programming**for beginners. Manipulate data using the tidyverse: select, filter and mutate. - YouTube](https://www.youtube.com/watch?v=nRtp7wSEtJA)**using R**
+
+- [Lecture 5]
+
+    1. R markdown
+    2. Continue with textbook
+
+    1. **Quiz**
+
+    1. Show example of sentiment extraction
+
+    - Homework
+
+    1. Book homework
+    2. **using R** [Statistical Software Labs (openintro.org)](https://www.openintro.org/book/statlabs/?statlab=software_intro) **using R**
+    3. **Khan** : [Marginal and conditional distributions (video) | Khan Academy](https://www.khanacademy.org/math/statistics-probability/analyzing-categorical-data/distributions-in-two-way-tables/v/marginal-distribution-and-conditional-distribution)
+
+- [Lecture 6]
+
+    1. Continue with textbook
+    2. Introduction to Git and Github
+    3. Quiz
+
+    - Homework
+
+    1. Swirl 5~8
+    2. Exercises up to end of Chapter 1 in book
+    3. **using R** [Statistical Software Labs (openintro.org)](https://www.openintro.org/book/statlabs/?statlab=software_intro) **using R**
+
+- [Test]

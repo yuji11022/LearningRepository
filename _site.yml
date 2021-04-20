@@ -1,0 +1,8 @@
+name: "my-website"
+navbar:
+  title: "Quantitative Analysis and Statistics"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
