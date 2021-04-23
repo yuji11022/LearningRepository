@@ -56,6 +56,8 @@ This is tentative. We will see how much we will accomplish. You should expect to
     5. [**(13) R****programming**for beginners. Manipulate data using the tidyverse: select, filter and mutate. - YouTube](https://www.youtube.com/watch?v=nRtp7wSEtJA)**using R**
 
 - [Lecture 5]
+    - [Example of R Code for Sentiment Extraction](sentiment analysis for Nader.R)
+    - [Results of R code for Sentiment Extraction](BeforeAndAfter.pdf)        
 
     1. R markdown
     2. Continue with textbook
