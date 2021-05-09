@@ -1,0 +1,66 @@
+---
+title: "Execise_3.6.1"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+```
+
+## Easy
+### Exercise 1
+
+Change the number of nrow in the code below and run the code to understand what nrow means.
+```{r 1, exercise=TRUE, exercise.eval=TRUE}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) + 
+  facet_wrap(~ class, nrow = 2)
+```
+
+### Exercise 2  
+
+```{r quiz}
+question("Which of the geom that is for displaying the results with a non-standard geom",
+  answer("geom_smooth", correct = TRUE),
+  answer("geom_point"),
+  answer("geom_bar"),
+  answer("There is no answer here.")
+)
+```
+
+## Intermediate
+### Exercise 3
+
+Change the variable that is assigned to linetype to "cyl" and predict what will be created before run the code.
+```{r 3, exercise=TRUE, exercise.eval=TRUE}
+ggplot(data = mpg) + 
+  geom_smooth(mapping = aes(x = displ, y = hwy, linetype = drv))
+```
+
+### Exercise 4
+The code below cause the error. modify it and run without error.
+(Hint: Function that couse error relates to what we read in chapter 3.5.
+Remember what you learned.)
+
+```{r 4, exercise=TRUE, exercise.eval=TRUE}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_smooth(mapping = aes(color = class)) + 
+  geom_smooth()
+```
+
+
+## Advance
+### Exercise 5
+
+Create the graphs below.
+
+<img src="https://d33wubrfki0l68.cloudfront.net/e4e1d3f9256c683b5219f9dd0eee81d0320e9664/cc55f/visualize_files/figure-html/unnamed-chunk-28-2.png" alt="drawing" style="width:400px;"/>
+<img src="https://d33wubrfki0l68.cloudfront.net/9a3c63edfc170c576ec5d34faa90df2dc2a43443/7f9e5/visualize_files/figure-html/unnamed-chunk-28-5.png" alt="drawing" style="width:400px;"/>
+
+```{r 5, exercise=TRUE, exercise.eval=TRUE}
+```
+
+
