@@ -1,0 +1,90 @@
+---
+title: "Hadley3.3-3.6"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Easy Level
+
+### Exercise 1
+
+*Here's a simple exercise with an empty code chunk provided for entering the answer.*
+
+First Let's try making facets for our mpg data. Use facet_wrap on any one categorical variable & facet_grid on any two categorical variable. Can you see the difference?
+```{r Facet, exercise=TRUE}
+
+```
+
+### Exercise 2
+
+*Labeling is important for both the analyst and for those who use those visualizations*
+
+Let's label the facets we made by putting lab() function
+```{r Labeling, exercise=TRUE}
+
+```
+
+## Intermediate level
+
+### Exercise 3
+
+*Where do we use geom_smooth? A linear model can be created on a scatterplot by using this which will be the 'best fit' line or a line average of all the points.*
+
+For the air quality dataset, given the scatterplot, find the 'best fit' line:
+
+```{r airquality, exercise=TRUE, exercise.eval=TRUE}
+library(tidyverse)
+
+airquality
+
+ggplot(data = airquality,aes(y=Wind,x=Temp))+geom_point()
+```
+
+```{r airquality-hint}
+geom_point()+geom_smooth()
+```
+
+### Exercise 4
+
+*You can include any number of single or multiple choice questions as a quiz. Use the `question` function to define a question and the `quiz` function for grouping multiple questions together.*
+
+Some questions to verify your understandings:
+
+```{r quiz}
+quiz(
+  question("What are the basic units in the grammar of graphics?",
+    answer("Data and layers"),
+    answer("Geometries and data"),
+    answer("The data, the aesthetics, and the geometries", correct = TRUE),
+    answer("Aesthetics and geometries")
+  )
+)
+```
+
+## Advanced
+
+### Exercise 5
+*Let's discover multiplot Can we draw it using R?*
+
+For iris dataset, form a multiplot. Should we use facet_wrap? or facet_grid? Try to run the code and check.
+
+```{r Multiplotgrid, exercise=TRUE}
+#Facet_grid
+library(tidyverse)
+iris
+ggplot(data = iris,aes(x=Sepal.Length))+geom_histogram(binwidth = 0.1) + facet_grid(Species~.)
+
+```
+
+```{r multiplotwrap, exercise = TRUE}
+library(tidyverse)
+iris
+ggplot(data = iris,aes(x=Sepal.Length))+geom_histogram(binwidth = 0.1) + facet_wrap(~Species)
+
+```
