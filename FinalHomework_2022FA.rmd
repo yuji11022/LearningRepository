@@ -1,0 +1,124 @@
+---
+title: "Final_HomeWork_YUJIYamaguchi"
+author: "YamaguchiYuji"
+date: "2/10/2022"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(xts)
+library(RCurl)
+library(anytime)
+library(quantmod)
+library(tidyquant)
+```
+
+1.	Code the R version of the code here
+
+```{r pressure, echo=TRUE}
+df_ice_cream <- read.csv("https://raw.githubusercontent.com/ritvikmath/Time-Series-Analysis/master/ice_cream.csv")
+colnames(df_ice_cream) <- c('date','production')
+df_ice_cream$date <- anytime::anydate(df_ice_cream$date)
+rownames(df_ice_cream) <-df_ice_cream$date
+df_ice_cream <- df_ice_cream[df_ice_cream$date >=as.Date("2010-01-01"),]
+
+df_ice_cream_2 <- df_ice_cream[, -1]
+plot( df_ice_cream$date, df_ice_cream$production,
+      col = "blue",
+      type = "l" ,
+      main = "Ice Cream Production over Time",
+      xlab = "",
+      ylab = "production")
+
+AutoCorrelation <- acf(df_ice_cream_2, lag.max = 100)
+plot(AutoCorrelation, main = "production ACF")
+
+PAutoCorrelation <- pacf(df_ice_cream_2)
+plot(PAutoCorrelation, main = "production PACF")
+```
+
+4.	Then do a similar analysis with a stock from the NY Stock Exchange and one more from either the Tokyo Stock Exchange or a stock from another stock exchange. As he does, look for significant ACF or PACF
+
+```{r-2, echo=TRUE}
+SFT<-getSymbols("MSFT",from = "2015-01-01",to = "2020-01-01",auto.assign=FALSE)
+
+columnList <- c("MSFT.Close")
+MSFT_close <- MSFT[, columnList] 
+
+plot( MSFT_close,
+      col = "blue",
+      type = "l" ,
+      main = "Stock price of Microsoft over Time",
+      xlab = "",
+      ylab = "Close Price")
+
+first_diff <- diff(MSFT$MSFT.Close)
+first_diff[is.na(first_diff)] = 0
+acf(first_diff, lag.max = 100)
+pacf(first_diff, lag.max = 100)
+
+AutoCorrelation <- acf(MSFT_close, lag.max = 100)
+plot(AutoCorrelation, main = "MSFT ACF")
+
+PAutoCorrelation <- pacf(MSFT_close)
+plot(PAutoCorrelation, main = "MSFT PACF")
+
+
+toyota <- getSymbols("7203.T",from = "2015-01-01",to = "2020-01-01",auto.assign=FALSE)
+
+columnList <- c("7203.T.Close")
+toyota_close <- toyota[, columnList] 
+
+
+plot( toyota_close,
+      col = "blue",
+      type = "l" ,
+      main = "Stock price of Microsoft over Time",
+      xlab = "",
+      ylab = "Close Price")
+
+AutoCorrelation <- acf(toyta_close, lag.max = 100)
+plot(AutoCorrelation, main = "toyota ACF")
+
+PAutoCorrelation <- pacf(toyota_close)
+plot(PAutoCorrelation, main = "toyota PACF")
+
+df_MSFT_close <- data.frame(date=index(MSFT_close), coredata(MSFT_close))
+```
+
+6.	Also, although he doesn’t do this, run the analysis for the stock returns as well. He uses differencing but if we look at returns, the variance may be more stationary than for differences. See if this looks true and state your conclusion as to whether it looks true and show the graphs.
+
+Conclusion: It is true
+
+```{r 3, echo=TRUE}
+MSFT<-getSymbols("MSFT",from = "2015-01-01",to = "2020-01-01",auto.assign=FALSE)
+
+columnList <- c("MSFT.Close")
+MSFT_close <- MSFT[, columnList] 
+df_MSFT_close <- data.frame(date=index(MSFT_close), coredata(MSFT_close))
+
+MSFT_daily_returns <- df_MSFT_close %>%
+  tq_transmute(select = MSFT.Close,           
+               mutate_fun = periodReturn,   
+               period = "daily",     
+               col_rename = "MSFT_returns") 
+
+AutoCorrelation <- acf(MSFT_daily_returns, lag.max = 100)
+plot(AutoCorrelation, main = "Return ACF")
+
+PAutoCorrelation <- pacf(MSFT_daily_returns)
+plot(PAutoCorrelation, main = "Return PACF")
+```
+
+
+9.	Replicate his analysis in this video as well:
+
+```{r 4, echo=TRUE}
+MSFT_close.ar <-arima(MSFT_close,c(1,0,0))
+MSFT_close.pr<-predict(MSFT_close.ar,n.ahead=500)
+df_MSFT_pred <- as.data.frame(MSFT_close.pr)
+plot(df_MSFT_pred$pred)
+```
