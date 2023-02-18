@@ -1,0 +1,33 @@
+Solutions of Exercise 3.4-3.6
+
+Easy
+Exercise 1
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) + 
+  facet_wrap(~ class, nrow = 2)
+  
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) + 
+  facet_grid(drv ~ cyl)
+  
+# facet_wrap() : "wraps" a 1d ribbon of panels into 2d. facet_grid() : produces a 2d grid of panels defined by variables which form the rows and columns.
+
+Exercise 2
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) + 
+  facet_wrap(~ class, nrow = 2)
+labs(
+  title = "Facet wrap",
+)
+
+Intermediate Level
+
+Exercise 3
+
+library(tidyverse)
+airquality
+ggplot(data = airquality,aes(y=Wind,x=Temp))+geom_point()+geom_smooth()
+
+Exercise 4
+
+The data, the aesthetics, and the geometries
